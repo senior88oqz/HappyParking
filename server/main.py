@@ -1,11 +1,13 @@
-from flask import Flask, request,Response
+from flask import Flask, request, Response
 from flask_cors import CORS
 from bay_sensor import getRealTimeData
+from area_searching import availableParks
 
 app = Flask(__name__)
 
-#Let all URLs of this server allow cross-domain requests
+# Let all URLs of this server allow cross-domain requests
 CORS(app, resources=r'/*')
+
 
 @app.route("/api/realtime-parkinfo")
 def realtimePark():
@@ -22,10 +24,21 @@ def realtimePark():
     )
 
 
+@app.route('/api/area-search')
+def area_search():
+    json_data = getRealTimeData()
+    a_search = availableParks(json_data)
+    return Response(
+        response=a_search,
+        mimetype="application/json",
+        status=200
+    )
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return "404"
 
+
 if __name__ == '__main__':
     app.run()
-

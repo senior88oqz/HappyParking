@@ -135,5 +135,4 @@ typings/
 .serverless
 
 *.pem
-server/area_searching.py
 package-lock.jsons

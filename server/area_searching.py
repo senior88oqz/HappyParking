@@ -1,10 +1,8 @@
 import geopandas as gpd
-import pandas as pd
-from sodapy import Socrata
 from shapely.geometry import Point
 from shapely.geometry import LinearRing
 from math import radians, cos, sin, asin, sqrt
-from server.bay_sensor import data2geojson
+from bay_sensor import data2geojson
 
 # @params: lon: longitude
 # @params: lat: latitude
