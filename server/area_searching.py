@@ -81,7 +81,7 @@ def data2geojson(gdf):
 
     #def availableRestriction(gdf, P):
     # for restriction matching
-    
+
     # test
     # aParks = availableParks(144.971755,-37.802740,'On-street Parking Bays.geojson')
     # data2geojson(aParks)
