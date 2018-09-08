@@ -1,5 +1,6 @@
 import pandas as pd
 from sodapy import Socrata
+import json
 
 # On-street Parking Bays
 park_bays = "wuf8-susg"
@@ -13,6 +14,25 @@ def getData(dataName):
     client = Socrata("data.melbourne.vic.gov.au", None)
     results = client.get(dataName, limit=100000)
     return results
+
+
+# convert dataframe to geoJson
+def data2geojson(df):
+    geoJson = {'type': 'FeatureCollection', 'features': []}
+    for i in range(len(df)):
+    # for i in range(10):
+        properties = {"bay_id": df['bay_id'][i],
+                      "st_marker_id": df["st_marker_id"][i],
+                      "status": df['status'][i]}
+
+        feature = {'type': 'Feature',
+               'properties': properties,
+               'geometry': df['the_geom'][i]
+               }
+        geoJson['features'].append(feature)
+    with open('bay_sensor.geojson','w', encoding='utf-8') as f:
+        json.dump(geoJson, f)
+        return geoJson
 
 
 bays_data = getData(park_bays)
@@ -39,4 +59,9 @@ for j in range(len(thin_bays_sensor)):
     if bay_id in bays.keys():
         thin_bays_sensor["the_geom"][j] = bays[bay_id]
 
+# a = data2geojson(thin_bays_sensor)
 # print(thin_bays_sensor)
+
+# print(type(data2geojson(thin_bays_sensor)))
+# print(a)
+
