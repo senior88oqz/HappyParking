@@ -14,7 +14,7 @@
         {
           "name": "Ballarat Car Parking",
           "type": "geojson",
-          "url": "http://localhost/ballaratcarparking.geojson"
+          "url": "http://127.0.0.1:5000/api/realtime-parkinfo"
         }
       ]
     }

@@ -1,6 +1,6 @@
 from flask import Flask, request,Response
 from flask_cors import CORS
-from server.bay_sensor import getRealTimeData
+from bay_sensor import getRealTimeData
 
 app = Flask(__name__)
 
