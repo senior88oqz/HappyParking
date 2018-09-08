@@ -1,15 +1,18 @@
 from flask import Flask, request
+from server.bay_sensor import getRealTimeData
+
 app = Flask(__name__)
 
 
 
 @app.route("/api/realtime-parkinfo")
 def realtimePark():
+    outputJson = getRealTimeData()
     if request.args.get('is_disabled'):
         print("filter data disabled parameter")
     if request.args.get('latitude') and request.args.get('longitude'):
         print("filter data location")
-    return "geo-json result"
+    return outputJson
 
 
 @app.errorhandler(404)
