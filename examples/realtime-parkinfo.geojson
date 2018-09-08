@@ -1,0 +1,125 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "bay_id": "15",
+        "rd_seg_dsc": "Drummond Street between Pelham Street and Grattan Street",
+        "status": "occupied",
+        "disability": false,
+        "is_restricted": true,
+        "restriction": {
+          "p_tag": "1/4P",
+          "duration": 15,
+          "is_charged": true,
+          "timestart": "7:30",
+          "timeend": "17:30"
+        }
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                144.968407801429,
+                -37.801510777867
+              ],
+              [
+                144.968437643957,
+                -37.801513407765
+              ],
+              [
+                144.968430125524,
+                -37.801557624142
+              ],
+              [
+                144.968400037253,
+                -37.801555050381
+              ],
+              [
+                144.968407801429,
+                -37.801510777867
+              ]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bay_id": "48",
+        "rd_seg_dsc": "Queen Street between Therry Street and Victoria Street",
+        "status": "1"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                144.958301268301,
+                -37.806811206094
+              ],
+              [
+                144.958248903799,
+                -37.806804580199
+              ],
+              [
+                144.9582535467,
+                -37.806778614909
+              ],
+              [
+                144.958305942107,
+                -37.806784736679
+              ],
+              [
+                144.958301268301,
+                -37.806811206094
+              ]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bay_id": "2",
+        "rd_seg_dsc": "La Trobe Street between Exhibition Street and Russell Street",
+        "status": "0"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                144.966955761225,
+                -37.808567073065
+              ],
+              [
+                144.9670090124,
+                -37.80855155227
+              ],
+              [
+                144.967017328082,
+                -37.808571304551
+              ],
+              [
+                144.966964904401,
+                -37.808586720681
+              ],
+              [
+                144.966955761225,
+                -37.808567073065
+              ]
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
