@@ -1,3 +1,2 @@
-Backend:
-- flask
-- flask_cors
+flask
+flask_cors

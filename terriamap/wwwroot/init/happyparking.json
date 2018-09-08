@@ -1,0 +1,25 @@
+{
+  "homeCamera": {
+    "west": 144.949,
+    "east": 144.976,
+    "north": -37.808,
+    "south": -37.82
+  },
+  "catalog": [
+    {
+      "name": "Happy Parking!",
+      "type": "group",
+      "isOpen": true,
+      "items": [
+        {
+          "name": "Ballarat Car Parking",
+          "type": "geojson",
+          "url": "http://localhost/ballaratcarparking.geojson"
+        }
+      ]
+    }
+  ],
+  "corsDomains": [
+    "localhost"
+  ]
+}
