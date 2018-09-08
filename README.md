@@ -44,11 +44,11 @@ Real-time park pool visualization
     
   Return: GeoJSON
   ``` json
-  {
+  "properties": {
     "bay_id": <str>,
-    "status": <bool>,
+    "occupied": <bool>,
     "only_for_disabled": <bool>,
-    "properties": {
+    "restriction": {
         "p_tag": <str>,
         "duration": <int>
         "is_charged": <bool>,
