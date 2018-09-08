@@ -6,7 +6,7 @@ In addition, the web app also provides a visualization regarding the analysis of
 At the government end, the real-time parking solution can help reduce the air pollution or traffic problem that caused by circling vehicles for vacant spaces. On the other hand, the visualization shows the land utilization in a more straightforward way, which supports the government to monitor and make a decision to improve quality of life.
 
 ## Live demo
-[Live demo](http://13.236.60.79/) on AWS (free tier)
+[Live demo](http://13.236.60.79/) on AWS (free tier instance).
 
 ## The Problem
 Problem explanation...
@@ -30,27 +30,29 @@ Solution...
 1. [On-street Parking Bay Sensors](https://data.melbourne.vic.gov.au/Transport-Movement/On-street-Parking-Bay-Sensors/vh2v-4nfs)
 2. [On-street Parking Bays](https://data.melbourne.vic.gov.au/Transport-Movement/On-street-Parking-Bays/crvt-b4kt)
 3. [On-street Car Park Bay Restrictions](https://data.melbourne.vic.gov.au/Transport-Movement/On-street-Car-Park-Bay-Restrictions/ntht-5rk7)
-4. On-street Car Parking Sensor Data - 2017
-5. On-street Car Parking Sensor Data - 2016
-6. On-street Car Parking Sensor Data - 2015
-7. On-street Car Parking Sensor Data - 2014
-8. Off-street car parks with capacity and type
+4. [On-street Car Parking Sensor Data - 2017](https://data.melbourne.vic.gov.au/Transport-Movement/On-street-Car-Parking-Sensor-Data-2017/u9sa-j86i)
+5. [On-street Car Parking Sensor Data - 2016](https://data.melbourne.vic.gov.au/Transport-Movement/On-street-Car-Parking-Sensor-Data-2016/dj7e-rdx9)
+6. [On-street Car Parking Sensor Data - 2015](https://data.melbourne.vic.gov.au/Transport-Movement/On-street-Car-Parking-Sensor-Data-2015/apua-t2tb)
+7. [On-street Car Parking Sensor Data - 2014](https://data.melbourne.vic.gov.au/Transport-Movement/On-street-Car-Parking-Sensor-Data-2014/t6hb-9uf2)
+8. [Off-street car parks with capacity and type](https://data.melbourne.vic.gov.au/Property-Planning/Off-street-car-parks-with-capacity-and-type/krh5-hhjn)
 
 ## Dependencies
 * [TerriaJS](https://github.com/TerriaJS/terriajs)
 * [Flask](http://flask.pocoo.org)
+* [Flase-CORS](https://flask-cors.readthedocs.io/en/latest)
+* [GeoPandas](http://geopandas.org)
 * [Python-GeoJSON](https://github.com/frewsxcv/python-geojson)
   
 ## TerriaMap prerequisites and scripts
-These tools are required for build and run TerriaMap:
+These tools are required for build and run _TerriaMap_:
 * Node.js
 * GDAL (try `brew install gdal`)
 
-Scripts (.sh files) under the `scripts` folder are snippets for useful commands.
-* `terriamap-install.sh`: Install the dependencies of the _TerriaMap_. (node_modules)
-* `terriamap-build.sh`: Build the _TerriaMap_.
-* `terriamap-start.sh`: Start the _TerriaMap_ at `localhost:3001`. 4 processes will be started in the background.
-* `terriamap-stop.sh`: Stop the _TerriaMap_, Terminate the 4 processes.
+Therea re some useful _TerriaMap_ commands. Use these under the `terriamap` folder.
+* `npm install`: Install the dependencies of the _TerriaMap_. (node_modules)
+* `npm run gulp`: Build the _TerriaMap_.
+* `npm start`: Start the _TerriaMap_ at `localhost:3001`. 4 processes will be started in the background.
+* `npm stop`: Stop the _TerriaMap_, Terminate the 4 processes.
 
 ## API documents
 #### Real-time park pool visualization
