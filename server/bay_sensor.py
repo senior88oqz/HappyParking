@@ -22,6 +22,7 @@ def data2geojson(df):
     with open('park_config.json') as json_doc:
         style = json.load(json_doc)
     for i in range(len(df)):
+    # for i in range(10):
         visual = style[df['status'][i]]
         temp = {"bay_id": df['bay_id'][i],
                       "st_marker_id": df["st_marker_id"][i],
@@ -33,7 +34,7 @@ def data2geojson(df):
                }
         geoJson['features'].append(feature)
     with open('bay_sensor.geojson','w', encoding='utf-8') as f:
-        output = json.dump(geoJson, f)
+        output = json.dumps(geoJson)
         return output
 
 def getRealTimeData():
