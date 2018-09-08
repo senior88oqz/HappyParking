@@ -1,18 +1,17 @@
 from flask import Flask, request
-from server.bay_sensor import getRealTimeData
-
+from flask_cors import CORS
 app = Flask(__name__)
 
-
+#Let all URLs of this server allow cross-domain requests
+CORS(app, resources=r'/*')
 
 @app.route("/api/realtime-parkinfo")
 def realtimePark():
-    outputJson = getRealTimeData()
     if request.args.get('is_disabled'):
         print("filter data disabled parameter")
     if request.args.get('latitude') and request.args.get('longitude'):
         print("filter data location")
-    return outputJson
+    return "geo-json result"
 
 
 @app.errorhandler(404)
