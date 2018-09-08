@@ -6,10 +6,12 @@ At the government end, the real-time parking solution can help reduce the air po
 
 ## Challenges
 #### National
-* Bounty: Mix and Mashup
+* Bounty: Mix and Mashup\
+  https://2018.hackerspace.govhack.org/challenges/8
 
 #### Victoria
-* Innovation space - A City Planning for Growth
+* Innovation space - A City Planning for Growth\
+  https://2018.hackerspace.govhack.org/challenges/80
   
 ## Architecture
 
@@ -29,40 +31,6 @@ At the government end, the real-time parking solution can help reduce the air po
 ### Backend
 * Flask
 
-
-### APIs
-Real-time park pool visualization
-
-* ``/api/realtime-parkinfo``\
-  Args: 
-    `is_disabled` int (default: 0)\
-    1: is disabled; 0: not disabled
-    
-    `latitude` float (optional default: null)\
-    `longitude` float (optional default: null)\
-    The target coordinates
-    
-  Return: GeoJSON
-  ``` json
-  "properties": {
-    "bay_id": <str>,
-    "occupied": <bool>,
-    "only_for_disabled": <bool>,
-    "restriction": {
-        "p_tag": <str>,
-        "duration": <int>
-        "is_charged": <bool>,
-        "timestart": <str>,
-        "timeend": <str>
-    }
-  }
-  ```
-  Related datasets:
-  * On street parking bays
-  
-* ``/api/???``
-
-
 ## Dependencies
 * TerriaJS\
   https://github.com/TerriaJS/terriajs
@@ -77,11 +45,8 @@ Real-time park pool visualization
 
 These tools are required for build and run TerriaMap:
 
-* Bash command shell
-* Node.js v6.0 or later
-* npm v3.0 or later
-* gulp
-* GDAL (optional)
+* Node.js
+* GDAL (try `brew install gdal`)
 
 Scripts (.sh files) under the `scripts` folder are snippets for command line commands.
 
@@ -89,3 +54,46 @@ Scripts (.sh files) under the `scripts` folder are snippets for command line com
 * `terriamap-build.sh`: Build the _TerriaMap_.
 * `terriamap-start.sh`: Start the _TerriaMap_ at `localhost:3001`. 4 processes will be started in the background.
 * `terriamap-stop.sh`: Stop the _TerriaMap_, Terminate the 4 processes.
+
+## API documents
+
+#### Real-time park pool visualization
+`GET` `/api/realtime-parkinfo`
+
+##### Request parameters
+
+| Parameter | Type | Required | Default | Description |
+|:---------:|:----:|:--------:|:-------:|:-----------:|
+|is_disabled|int|no|0|1 for disabled|
+|latitude|float|no|null|Target address|
+|longitude|float|no|null|Target address|
+
+##### Response format: `GeoSJON`
+
+| Property | Type | Description |
+|:---------:|:----:|:----------:|
+|bay_id|str||
+|TODO...||
+
+##### Response example
+```
+...
+"properties": {
+    "bay_id": "20",
+    "occupied": true,
+    "only_for_disabled": false,
+    "restriction": {
+        "p_tag": "2p",
+        "duration": 120,
+        "is_charged": true,
+        "timestart": "8:30",
+        "timeend": "17:30"
+    }
+}
+...
+```
+
+##### Related datasets:
+* On-street Parking Bay Sensors
+* On-street Parking Bays
+* On-street Car Park Bay Restrictions
