@@ -12,14 +12,18 @@
       "isOpen": true,
       "items": [
         {
-          "name": "Ballarat Car Parking",
+          "name": "All on-street parking areas",
           "type": "geojson",
-          "url": "http://127.0.0.1:5000/api/realtime-parkinfo"
+          "url": "http://13.236.60.79:5000/static/all_park.geojson"
+        },
+        {
+          "name": "Real-time parking status",
+          "type": "geojson",
+          "url": "http://13.236.60.79:5000/api/realtime-parkinfo"
         }
       ]
     }
   ],
   "corsDomains": [
-    "localhost"
   ]
 }
