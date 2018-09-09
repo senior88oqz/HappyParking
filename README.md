@@ -11,7 +11,7 @@ The Happy Parking! project aims to make the most use of the open-source data fro
 
 Parkers aim to create a <b>real-time web app</b> for end-users, helping drivers to find a vacant spot efficiently. 
 
->It allows users to select the location they want to go and get them all vacant car parks in the area within 500 m and match the car park restrictions with duration they are willing to park. It has a priority rank for the matching function -- free first, within the area, outside area. 
+>It allows users to select the location they want to go and get them all vacant car parks in the area within 500 m and match the car park restrictions with duration they are willing to park. It has a priority rank for the matching function -- free first, within the area, outside area. If there are no vacant spots in this area, users can also use the off-street car park locations to find a car park.
 
 >At the government end, the real-time parking solution can help reduce the air pollution or traffic problem that caused by circling vehicles for vacant spaces as well as reduce the time wasted in finding a vacant spot, especially in the city area. 
 >
@@ -22,7 +22,8 @@ Parkers aim to create a <b>real-time web app</b> for end-users, helping drivers 
 In addition, the web app also provides a visualization regarding the analysis of the <b>parking area occupancy rate</b> based on historical data of the past years.
 
 >It demonstrates the occupancy rate changes in each street with inground sensors according to their timestamps. Regarding these car park analysis data, it enables users to understand the urban planning in Melbourne and the changes in economic centres. Moreover, support the government’s urban planning decision in car parking, Remove car parks with low occupancy rate and build greenspace or improve public transportation network construction to reduce car park stress.
-
+>
+>We judged the occupancy rate on the peak hour(6:30-9: 00 am & 3:00-18: 30 pm) and whether it is the weekdays and weekends to make a comparison for each car par zone.
 
 
 
