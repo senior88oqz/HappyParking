@@ -1,3 +1,4 @@
+import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
 from shapely.geometry import LinearRing
@@ -25,8 +26,9 @@ def availableParks(inputGeojson):
         if (dis < 500):
             avi_parks.append(geom)
     outputgeojson = parks_data.loc[parks_data['geometry'].isin(avi_parks)]
-    outputgeojson = outputgeojson.loc[outputgeojson['occupied'] == false]
-    outputgeojson = data2geojson(outputgeojson)
+    outputgeojson = outputgeojson.loc[outputgeojson['occupied'] == False]
+    df = pd.DataFrame(outputgeojson)
+    outputgeojson = data2geojson(df)
     return outputgeojson
 
 def findNearestPoint(geom,circle):
