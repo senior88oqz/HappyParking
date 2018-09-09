@@ -1,5 +1,7 @@
-# GovHack 2018 Challenge
+# GovHack 2018 Challenge 
 ## Team Parkers - Happy Parking
+
+![alt text](./design/logo@128px.png "Parking Space Info")
 
 [Live demo](http://13.236.60.79/) is available here.
 
