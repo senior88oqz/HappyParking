@@ -76,15 +76,15 @@ def haversine(lon1, lat1, lon2, lat2):
 
 def data2geojson(df):
     geoJson = {'type': 'FeatureCollection', 'features': []}
-    # with open('park_config.json') as json_doc:
-    #   style = json.load(json_doc)
+    with open('park_config.json') as json_doc:
+       style = json.load(json_doc)
     for i in range(1, len(df)):
-        # for i in range(10):
-        # visual = style[df['status'][i]]
+
+        visual = style[df['status'][i]]
         temp = {"bay_id": df['bay_id'].values[i],
                 "st_marker_id": df["st_marker_id"].values[i],
                 "status": df['status'].values[i]}
-        properties = dict(temp)  # , **visual)
+        properties = dict((temp), **visual)
         feature = {'type': 'Feature',
                    'properties': properties,
                    'geometry': df['geometry'].values[i]
