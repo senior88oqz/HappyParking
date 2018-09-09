@@ -43,11 +43,11 @@ def get_occupation(code, streets, limit):
                 arri = datetime.strptime(occ['arrivaltime'], '%Y-%m-%dT%H:%M:%S.000')
                 depa = datetime.strptime(occ['departuretime'], '%Y-%m-%dT%H:%M:%S.000')
                 weekday = arri.isoweekday()
-                curr_date = arri.date()
-                m_peak_start = datetime.strptime((str(curr_date) + "T06:30:00"),"%Y-%m-%dT%H:%M:%S")
-                m_peak_end = datetime.strptime((str(curr_date) + "T09:00:00"),"%Y-%m-%dT%H:%M:%S")
-                e_peak_start = datetime.strptime((str(curr_date) + "T15:00:00"),"%Y-%m-%dT%H:%M:%S")
-                e_peak_end = datetime.strptime((str(curr_date) + "T18:30:00"),"%Y-%m-%dT%H:%M:%S")
+                curr_date = str(arri.date())
+                m_peak_start = datetime.strptime((curr_date + "T06:30:00"),"%Y-%m-%dT%H:%M:%S")
+                m_peak_end = datetime.strptime((curr_date + "T09:00:00"),"%Y-%m-%dT%H:%M:%S")
+                e_peak_start = datetime.strptime((curr_date + "T15:00:00"),"%Y-%m-%dT%H:%M:%S")
+                e_peak_end = datetime.strptime((curr_date + "T18:30:00"),"%Y-%m-%dT%H:%M:%S")
 
                 if weekday < 6:
                     if arri.time() < time(6, 30):
