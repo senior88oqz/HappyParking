@@ -1,16 +1,16 @@
 {
 	"Present":{
-		"stroke": "#696969",
+		"stroke": "#000000",
 	     "stroke-width": 1,
 	     "storke-opacity": 1,
-	     "fill": "#696969",
+	     "fill": "#000000",
 	     "fill-opacity":1
 	 },
      "Unoccupied":{
-	     "stroke": "#0000FF",
+	     "stroke": "#D2691E",
 	     "stroke-width": 1,
 	     "storke-opacity": 1,
-	     "fill": "#0000FF",
+	     "fill": "#D2691E",
 	     "fill-opacity":1
      },
      "disabled":{
@@ -19,5 +19,12 @@
  		"storke-opacity": 1,
  		"fill": "#DC143C",
  		"fill-opacity":0.5
+     },
+	"Unavailable":{
+	     "stroke": "#DCDCDC",
+	     "stroke-width": 1,
+	     "storke-opacity": 1,
+	     "fill": "#DCDCDC",
+	     "fill-opacity":0.2
      }
 }
