@@ -14,7 +14,7 @@
         {
           "name": "All on-street parking areas",
           "type": "geojson",
-          "url": "http://13.236.60.79:5000/static/all-parks.json"
+          "url": "http://13.236.60.79:5000/static/all_park.geojson"
         }
       ]
     }
