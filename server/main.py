@@ -37,7 +37,7 @@ def realtimePark():
 @app.route("/api/area-search")
 def area_search():
     data = getRealTimeData(bays_data)
-    avail_parks = availableParks(data)
+    avail_parks = availableParks()
     fp = open('output.txt', 'w')
     fp.write(avail_parks)
     fp.close()

@@ -10,9 +10,10 @@ from bay_sensor import data2geojson, getRealTimeData
 # @params: lat: latitude
 # @params: parks: geojson
 
-def availableParks(inputGeojson):
+def availableParks():
+    inputGeojson = 'bay_sensor.geojson'
     circle = Point(144.968492,-37.797397)
-    parks_data = gpd.GeoDataFrame(json.loads(inputGeojson))
+    parks_data = gpd.read_file(inputGeojson)
     # parks_data = parks_data.set_geometry('geometry')
     avi_parks = []
     for geom in parks_data['geometry']:
