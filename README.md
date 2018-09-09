@@ -11,7 +11,9 @@ The Happy Parking! project aims to make the most use of the open-source data fro
 
 **Part 1**
 
-Parkers aim to create a <b>real-time web app</b> for end-users, helping drivers to find a vacant spot efficiently. 
+Parkers aim to create a <b>real-time web app</b> for end-users, helping drivers to find a vacant parking spot efficiently.
+Our system will render the result based on the [real-time parking bay senser dataset](https://data.melbourne.vic.gov.au/Transport-Movement/On-street-Parking-Bay-Sensors/vh2v-4nfs) and other datasets from the [melbourne open data center](https://data.melbourne.vic.gov.au/).
+
 
 >It allows users to select the location they want to go and get them all vacant car parks in the area within 500 m and match the car park restrictions with duration they are willing to park. It has a priority rank for the matching function -- free first, within the area, outside area. If there are no vacant spots in this area, users can also use the off-street car park locations to find a car park.
 
@@ -39,10 +41,10 @@ In addition, the web app also provides a visualization regarding the analysis of
 
 
 ### Real-time on-street parking bay occupation status
- * We also combined different dataset provided by the [City of Melbourne](https://data.melbourne.vic.gov.au/). 
+ * We combined different dataset provided by the [City of Melbourne](https://data.melbourne.vic.gov.au/). 
  * We provided useful information about the vacant parking space in the city.
     ![alt text](./images/vacantSpace.png "Parking Space Info")
-    * **We may improve the usage of vacant parking space by enabling a _booking_ system**
+ * **We may improve the usage of vacant parking space by enabling a _booking_ system**
 
   
 ## Used Datasets
