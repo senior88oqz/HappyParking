@@ -4,7 +4,7 @@ import json
 from shapely.geometry import Point
 from shapely.geometry import LinearRing
 from math import radians, cos, sin, asin, sqrt
-from bay_sensor import data2geojson, getRealTimeData
+from bay_sensor import data2geojson
 
 # @params: lon: longitude
 # @params: lat: latitude
@@ -34,7 +34,7 @@ def availableParks():
         outputgeojson = data2geojson(outputgeojson)
         return outputgeojson
     else:
-        return 0
+        return '{"type": "FeatureCollection","features": []}'
 
 def findNearestPoint(geom,circle):
     pol_ext = LinearRing(geom.exterior.coords)

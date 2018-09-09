@@ -135,7 +135,7 @@ typings/
 .serverless
 
 *.pem
-package-lock.jsons
+package-lock.json
 
 ### Python template
 # Byte-compiled / optimized / DLL files
