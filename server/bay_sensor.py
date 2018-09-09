@@ -22,7 +22,6 @@ def data2geojson(df):
     with open('park_config.json') as json_doc:
         style = json.load(json_doc)
     for i in range(len(df)):
-    # for i in range(10):
         visual = style[df['status'][i]]
         temp = {"bay_id": df['bay_id'][i],
                       "st_marker_id": df["st_marker_id"][i],
@@ -33,18 +32,16 @@ def data2geojson(df):
                'geometry': df['the_geom'][i]
                }
         geoJson['features'].append(feature)
-    with open('bay_sensor.geojson','w', encoding='utf-8') as f:
-        output = json.dumps(geoJson)
-        return output
+    # write data to json files
+    # with open('bay_sensor.geojson','w', encoding='utf-8') as f:
+    output = json.dumps(geoJson)
+    return output
 
-def getRealTimeData():
-    bays_data = getData(park_bays)
+def getRealTimeData(bays_data):
     bay_sensor_data = getData(park_bay_sensor)
-    bay_restrictions_data = getData(park_bay_restrictions)
 
     results_bays = pd.DataFrame.from_records(bays_data)
     results_bays_sensor = pd.DataFrame.from_records(bay_sensor_data)
-    results_bay_restrictions = pd.DataFrame.from_records(bay_restrictions_data)
 
     # remove non-useful columns
     thin_bays_sensor = results_bays_sensor.drop(["lat", "location", "lon"], axis=1)
@@ -63,5 +60,6 @@ def getRealTimeData():
             thin_bays_sensor["the_geom"][j] = bays[bay_id]
 
     outputJson = data2geojson(thin_bays_sensor)
+
     return outputJson
 

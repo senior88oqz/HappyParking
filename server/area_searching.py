@@ -1,3 +1,4 @@
+import pandas as pd
 import geopandas as gpd
 import json
 from shapely.geometry import Point
@@ -25,12 +26,20 @@ def availableParks(inputGeojson):
             dis = haversine(circle.x,circle.y,p[0],p[1])
         if (dis < 500):
             avi_parks.append(geom)
+<<<<<<< HEAD
     if(len(avi_parks)!= 0):
         outputgeojson = parks_data.loc[parks_data['geometry'].isin(avi_parks)]
         outputgeojson = outputgeojson.loc[outputgeojson['status'] == 'Unoccupied']
         outputgeojson = data2geojson(outputgeojson)
         return outputgeojson
     else: return 0
+=======
+    outputgeojson = parks_data.loc[parks_data['geometry'].isin(avi_parks)]
+    outputgeojson = outputgeojson.loc[outputgeojson['occupied'] == False]
+    df = pd.DataFrame(outputgeojson)
+    outputgeojson = data2geojson(df)
+    return outputgeojson
+>>>>>>> 7a9a56e61cd59f7e7e998f63a42501ea62471dfb
 
 def findNearestPoint(geom,circle):
     pol_ext = LinearRing(geom.exterior.coords)

@@ -1,17 +1,27 @@
 from flask import Flask, request, Response
 from flask_cors import CORS
-from bay_sensor import getRealTimeData
+from bay_sensor import getRealTimeData, getData
 from area_searching import availableParks
 
 app = Flask(__name__)
 
+# On-street Parking Bays
+park_bays = "wuf8-susg"
+# On-street Parking Bay Sensors
+park_bay_sensor = "dtpv-d4pf"
+# On-street Car Park Bay Restrictions
+park_bay_restrictions = "rzb8-bz3y"
+
 # Let all URLs of this server allow cross-domain requests
 CORS(app, resources=r'/*')
+
+# all parking areas info
+bays_data = None
 
 
 @app.route("/api/realtime-parkinfo")
 def realtimePark():
-    json_data = getRealTimeData()
+    json_data = getRealTimeData(bays_data)
     if request.args.get('is_disabled'):
         print("filter data disabled parameter")
     if request.args.get('latitude') and request.args.get('longitude'):
@@ -24,12 +34,11 @@ def realtimePark():
     )
 
 
-@app.route('/api/area-search')
+@app.route("/api/area-search")
 def area_search():
-    json_data = getRealTimeData()
-    a_search = availableParks(json_data)
+    data = getRealTimeData(bays_data)
     return Response(
-        response=a_search,
+        response=availableParks(data),
         mimetype="application/json",
         status=200
     )
@@ -40,5 +49,12 @@ def page_not_found(e):
     return "404"
 
 
+def initialization():
+    # get bays data
+    global bays_data
+    bays_data = getData(park_bays)
+
+
 if __name__ == '__main__':
+    initialization()
     app.run()
