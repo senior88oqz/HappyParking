@@ -19,8 +19,9 @@ def getData(dataName):
 # convert dataframe to geoJson
 def data2geojson(df):
     geoJson = {'type': 'FeatureCollection', 'features': []}
-    with open('park_config.json') as json_doc:
+    with open('./static/park_config.json') as json_doc:
         style = json.load(json_doc)
+
     for i in range(len(df)):
         visual = style[df['status'][i]]
         temp = {"bay_id": df['bay_id'][i],
@@ -35,10 +36,8 @@ def data2geojson(df):
         geoJson['features'].append(feature)
     # write data to json files
     with open('bay_sensor.geojson','w', encoding='utf-8') as f:
+        json.dump(geoJson,f)
         output = json.dumps(geoJson)
-        f.write(output)
-        f.close()
-    # output = json.dump(geoJson,f)
     return output
 
 
@@ -47,9 +46,13 @@ def data2geojson(df):
 
 def data2geojson1(df):
     geoJson = {'type': 'FeatureCollection', 'features': []}
+    with open('park_config.json') as json_doc:
+        style = json.load(json_doc)
     for i in range(len(df)):
-        temp = {"bay_id": df['bay_id'][i]}
-        properties = dict(temp)
+        visual = style['Unavailable']
+        temp = {"bay_id": df['bay_id'][i],
+                "descriptions": df["descriptions"][i]}
+        properties = dict(temp, **visual)
         feature = {'type': 'Feature',
                    'properties': properties,
                    'geometry': df['the_geom'][i]
@@ -59,13 +62,15 @@ def data2geojson1(df):
     with open('all_park.geojson', 'w', encoding='utf-8') as f:
         output = json.dump(geoJson, f)
         return output
+
 """
 
 
 def getRealTimeData(bays_data, latitude=None, longtitude=None, is_disabled=None):
-    res_json = open('restriction.json', 'r')
+    res_json = open('./static/restriction.json', 'r')
     restrition = json.load(res_json)
 
+    # bays_data = getData(park_bays)
     bay_sensor_data = getData(park_bay_sensor)
 
     results_bays = pd.DataFrame.from_records(bays_data)
@@ -93,4 +98,3 @@ def getRealTimeData(bays_data, latitude=None, longtitude=None, is_disabled=None)
 
     outputJson = data2geojson(thin_bays_sensor)
     return outputJson
-
