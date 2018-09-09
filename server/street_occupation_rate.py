@@ -30,6 +30,7 @@ def get_occupation(code, streets, limit):
     weekend_unpeak = 24 * 3600
     total_peak = 6*3600
     street_collection = {}
+    i = 0
     for street in streets:
         d_ids = client.get(code, select="distinct(deviceid)", streetname=street, limit=limit)
         num_bays = len(d_ids)
@@ -130,6 +131,8 @@ def get_occupation(code, streets, limit):
                     date_collection[curr_date]["day_ratio"] += day_ratio
 
         street_collection[street] = date_collection
+        i = i + 1
+        print("i = ", i)
     return street_collection
 
 
