@@ -7,11 +7,26 @@
 
 
 **Our aims**\
-Parkers aim to create a real-time web app for end-users, helping drivers to find a vacant spot efficiently.
-It allows users to narrow down the range by distance and intended duration.
+The Happy Parking! project aims to make the most use of the open-source data from government solving practical problems and tell stories of urban development according to historical car park data.
 
-In addition, the web app also provides a visualization regarding the analysis of the parking area occupancy rate based on historical data of the past 4 years.
-At the government end, the real-time parking solution can help reduce the air pollution or traffic problem that caused by circling vehicles for vacant spaces. On the other hand, the visualization shows the land utilization in a more straightforward way, which supports the government to monitor and make a decision to improve quality of life.
+### Part 1
+
+Parkers aim to create a <b>real-time web app</b> for end-users, helping drivers to find a vacant spot efficiently. 
+
+>It allows users to select the location they want to go and get them all vacant car parks in the area within 500 m and match the car park restrictions with duration they are willing to park. It has a priority rank for the matching function -- free first, within the area, outside area. 
+
+>At the government end, the real-time parking solution can help reduce the air pollution or traffic problem that caused by circling vehicles for vacant spaces as well as reduce the time wasted in finding a vacant spot, especially in the city area. 
+>
+>On the other hand, the visualization shows the land utilization in a more straightforward way, which supports the government to monitor and make a decision to improve quality of life. 
+
+### Part 2
+
+In addition, the web app also provides a visualization regarding the analysis of the parking area occupancy rate based on historical data of the past years.
+
+>It demonstrates the occupancy rate changes in each street with inground sensors according to their timestamps. Regarding these car park analysis data, it enables users to understand the urban planning in Melbourne and the changes in economic centres. Moreover, support the government’s urban planning decision in car parking, Remove car parks with low occupancy rate and build greenspace or improve public transportation network construction to reduce car park stress.
+
+
+
 
 ## Features
 
@@ -31,12 +46,7 @@ xxxx
 
 #### Victoria
 1.  [Innovation space - A City Planning for Growth](https://2018.hackerspace.govhack.org/challenges/80)\
-    We aims to discover and better utilise the benefits of public parking space in Melbourne CBD. 
-    * We calculated the usage of parking space from the 2016/2017 On-street Car Parking Sensor Data. 
-    * We also combined different dataset provided by the [City of Melbourne](https://data.melbourne.vic.gov.au/). 
-    * We provided useful information about the vacant parking space in the city.
-    ![alt text](./images/vacantSpace.png "Parking Space Info")
-       * **We may improve the usage of vacant parking space by enabling a _booking_ system**
+    Some explanation...
 1.  [Play Melbourne - A Creative City](https://2018.hackerspace.govhack.org/challenges/81)\
     Some explanation...
   
