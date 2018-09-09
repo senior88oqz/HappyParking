@@ -9,7 +9,7 @@
 **Our aims**\
 The Happy Parking! project aims to make the most use of the open-source data from government solving practical problems and tell stories of urban development according to historical car park data.
 
-### Part 1
+**Part 1**
 
 Parkers aim to create a <b>real-time web app</b> for end-users, helping drivers to find a vacant spot efficiently. 
 
@@ -19,9 +19,9 @@ Parkers aim to create a <b>real-time web app</b> for end-users, helping drivers 
 >
 >On the other hand, the visualization shows the land utilization in a more straightforward way, which supports the government to monitor and make a decision to improve quality of life. 
 
-### Part 2
+**Part 2**
 
-In addition, the web app also provides a visualization regarding the analysis of the parking area occupancy rate based on historical data of the past years.
+In addition, the web app also provides a visualization regarding the analysis of the <b>parking area occupancy rate</b> based on historical data of the past years.
 
 >It demonstrates the occupancy rate changes in each street with inground sensors according to their timestamps. Regarding these car park analysis data, it enables users to understand the urban planning in Melbourne and the changes in economic centres. Moreover, support the government’s urban planning decision in car parking, Remove car parks with low occupancy rate and build greenspace or improve public transportation network construction to reduce car park stress.
 
