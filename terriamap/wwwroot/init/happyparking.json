@@ -15,6 +15,11 @@
           "name": "All on-street parking areas",
           "type": "geojson",
           "url": "http://13.236.60.79:5000/static/all_park.geojson"
+        },
+        {
+          "name": "Real-time parking status",
+          "type": "geojson",
+          "url": "http://13.236.60.79:5000/api/realtime-parkinfo"
         }
       ]
     }
