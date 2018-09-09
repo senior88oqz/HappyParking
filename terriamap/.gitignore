@@ -1,6 +1,6 @@
 node_modules/
 .idea/
-wwwroot/build/
+# wwwroot/build/
 wwwroot/doc/
 npm-debug.log
 version.js
