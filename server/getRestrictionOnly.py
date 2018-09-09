@@ -7,10 +7,10 @@ import json
 def getData(code, limit):
     client = Socrata("data.melbourne.vic.gov.au", None)
     results = client.get(code, limit=limit)
-    return results
+    results_df = pd.DataFrame.from_records(results)
+    return results_df
 
 # Convert to pandas DataFrame
-results_df = pd.DataFrame.from_records(results)
 
 
 def getRes(restritionDataFrame):
@@ -22,7 +22,7 @@ def getRes(restritionDataFrame):
         if isinstance(restritionDataFrame['description2'][i], float):
             res_map[restritionDataFrame['bayid'][i]] = {'description1':restritionDataFrame['description1'][i]}
 
-        if isinstance(restritionDataFrame['description3'][i], float):
+        elif isinstance(restritionDataFrame['description3'][i], float):
             res_map[restritionDataFrame['bayid'][i]] = {'description1':restritionDataFrame['description1'][i],
                                                'description2':restritionDataFrame['description2'][i]}
         else:
@@ -33,6 +33,6 @@ def getRes(restritionDataFrame):
 
 
 if __name__ == '__main__':
-    resData = getData(code="rzb8-bz3y", limit=4000)
+    resData = getData(code="rzb8-bz3y", limit=5000)
     with open("restriction.json", "w") as write_file:
         json.dump(getRes(resData), write_file)
