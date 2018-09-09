@@ -1,9 +1,7 @@
-# Happy Parking
+# GovHack 2018 Challenge
+## Team Parkers - Happy Parking
 
 [Live demo](http://13.236.60.79/) is available here.
-
-**The Problem**\
-(Problem description)
 
 
 **Our aims**\
