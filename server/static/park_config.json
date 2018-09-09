@@ -1,17 +1,17 @@
 {
 	"Present":{
-		"stroke": "#000000",
+		"stroke": "#DC143C",
 	     "stroke-width": 1,
 	     "storke-opacity": 1,
-	     "fill": "#000000",
-	     "fill-opacity":1
+	     "fill": "#DC143C",
+	     "fill-opacity":0.75
 	 },
      "Unoccupied":{
-	     "stroke": "#D2691E",
+	     "stroke": "#0000FF",
 	     "stroke-width": 1,
 	     "storke-opacity": 1,
-	     "fill": "#D2691E",
-	     "fill-opacity":1
+	     "fill": "#0000FF",
+	     "fill-opacity":0.75
      },
      "disabled":{
       	"stroke": "#DC143C",
@@ -21,10 +21,10 @@
  		"fill-opacity":0.5
      },
 	"Unavailable":{
-	     "stroke": "#DCDCDC",
+	     "stroke": "#000000",
 	     "stroke-width": 1,
-	     "storke-opacity": 1,
-	     "fill": "#DCDCDC",
-	     "fill-opacity":0.2
+	     "storke-opacity": 0.6,
+	     "fill": "#000000",
+	     "fill-opacity":0.5
      }
 }
