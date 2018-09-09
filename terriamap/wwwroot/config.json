@@ -46,7 +46,7 @@
         brandBarElements: [
             "",
             "<a target=\"_blank\" href=\"http://www.nicta.com.au\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
-            ""
+            '<a id="hp-logo" target="_blank" href="https://github.com/senior88oqz/HappyParking"><img src="images/logo-w-title.png" height="52"/></a>',
         ],
         // Shown when things go wrong.
         supportEmail: "allanwujm@gmail.com",
