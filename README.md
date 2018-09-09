@@ -31,7 +31,12 @@ xxxx
 
 #### Victoria
 1.  [Innovation space - A City Planning for Growth](https://2018.hackerspace.govhack.org/challenges/80)\
-    Some explanation...
+    We aims to discover and better utilise the benefits of public parking space in Melbourne CBD. 
+    * We calculated the usage of parking space from the 2016/2017 On-street Car Parking Sensor Data. 
+    * We also combined different dataset provided by the [City of Melbourne](https://data.melbourne.vic.gov.au/). 
+    * We provided useful information about the vacant parking space in the city.
+    ![alt text](./images/vacantSpace.png "Parking Space Info")
+       * **We may improve the usage of vacant parking space by enabling a _booking_ system**
 1.  [Play Melbourne - A Creative City](https://2018.hackerspace.govhack.org/challenges/81)\
     Some explanation...
   
