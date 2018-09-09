@@ -34,8 +34,10 @@ def data2geojson(df):
                    }
         geoJson['features'].append(feature)
     # write data to json files
-    # with open('bay_sensor.geojson','w', encoding='utf-8') as f:
-    output = json.dumps(geoJson)
+    with open('bay_sensor.geojson','w', encoding='utf-8') as f:
+        output = json.dumps(geoJson)
+        f.write(output)
+        f.close()
     # output = json.dump(geoJson,f)
     return output
 
