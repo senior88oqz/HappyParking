@@ -24,29 +24,57 @@ def data2geojson(df):
     for i in range(len(df)):
         visual = style[df['status'][i]]
         temp = {"bay_id": df['bay_id'][i],
-                      "st_marker_id": df["st_marker_id"][i],
-                      "status": df['status'][i]}
+                "st_marker_id": df["st_marker_id"][i],
+                "status": df['status'][i],
+                "descriptions": df["descriptions"][i]}
         properties = dict(temp, **visual)
         feature = {'type': 'Feature',
-               'properties': properties,
-               'geometry': df['the_geom'][i]
-               }
+                   'properties': properties,
+                   'geometry': df['the_geom'][i]
+                   }
         geoJson['features'].append(feature)
     # write data to json files
     # with open('bay_sensor.geojson','w', encoding='utf-8') as f:
     output = json.dumps(geoJson)
+    # output = json.dump(geoJson,f)
     return output
 
-def getRealTimeData(bays_data):
+
+# convert all park bays
+"""
+
+def data2geojson1(df):
+    geoJson = {'type': 'FeatureCollection', 'features': []}
+    for i in range(len(df)):
+        temp = {"bay_id": df['bay_id'][i]}
+        properties = dict(temp)
+        feature = {'type': 'Feature',
+                   'properties': properties,
+                   'geometry': df['the_geom'][i]
+                   }
+        geoJson['features'].append(feature)
+    # write data to json files
+    with open('all_park.geojson', 'w', encoding='utf-8') as f:
+        output = json.dump(geoJson, f)
+        return output
+"""
+
+
+def getRealTimeData(bays_data, latitude=None, longtitude=None, is_disabled=None):
+    res_json = open('restriction.json', 'r')
+    restrition = json.load(res_json)
+
     bay_sensor_data = getData(park_bay_sensor)
 
     results_bays = pd.DataFrame.from_records(bays_data)
     results_bays_sensor = pd.DataFrame.from_records(bay_sensor_data)
 
     # remove non-useful columns
-    thin_bays_sensor = results_bays_sensor.drop(["lat", "location", "lon"], axis=1)
-    # add new column for geometry
+    thin_bays_sensor = results_bays_sensor.drop(["location"], axis=1)
+
+    # add new column for geometry and descriptions
     thin_bays_sensor["the_geom"] = ""
+    thin_bays_sensor["descriptions"] = ""
 
     # Hashmap for parking bays
     bays = dict()
@@ -58,8 +86,9 @@ def getRealTimeData(bays_data):
         bay_id = thin_bays_sensor["bay_id"][j]
         if bay_id in bays.keys():
             thin_bays_sensor["the_geom"][j] = bays[bay_id]
+        if bay_id in restrition.keys():
+            thin_bays_sensor["descriptions"][j] = restrition[bay_id]
 
     outputJson = data2geojson(thin_bays_sensor)
-
     return outputJson
 

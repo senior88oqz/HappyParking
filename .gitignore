@@ -136,3 +136,9 @@ typings/
 
 *.pem
 package-lock.jsons
+
+### Python template
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
