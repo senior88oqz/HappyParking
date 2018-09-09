@@ -17,9 +17,9 @@
           "url": "http://13.236.60.79:5000/api/realtime-parkinfo"
         },
         {
-          "name": "All on-street Parking says",
+          "name": "All on-street Parking bays",
           "type": "geojson",
-          "url": "http://13.236.60.79:5000/static/all_park.geojson"
+          "url": "http://13.236.60.79/data/all_park.geojson"
         },
         {
           "name": "Real-time on-street parking bay status in a smaller area",
